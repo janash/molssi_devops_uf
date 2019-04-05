@@ -25,6 +25,27 @@ def mean(num_list):
 
     return mean_list
 
+def factorial(n):
+    """
+    Calculate a factorial
+
+    Parameters
+    -----------
+    n : int
+        The factorial parameter.
+
+    Returns
+    -------
+    factorial : int
+        The requested factorial
+    """
+
+    fact = 1
+    for i in range(1, n+1): 
+        fact = fact * i 
+
+    return fact
+
 
 def canvas(with_attribution=True):
     """
