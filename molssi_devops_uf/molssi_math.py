@@ -21,7 +21,18 @@ def mean(num_list):
         The mean of the list
     """
 
-    mean_list = sum(num_list) / len(num_list)
+    # Check that input is type list
+    if not isinstance(num_list, list):
+        raise TypeError('Invalid input %s - must be type list' %(num_list))
+
+    # Check that list is not empty
+    if num_list == []:
+        raise ValueError('Cannot calculate the mean of an empty list.')
+
+    try:
+        mean_list = sum(num_list) / len(num_list)
+    except TypeError:
+        raise TypeError('Cannot calculate mean of list - all list elements must be numeric')
 
     return mean_list
 
@@ -41,8 +52,8 @@ def factorial(n):
     """
 
     fact = 1
-    for i in range(1, n+1): 
-        fact = fact * i 
+    for i in range(1, n+1):
+        fact = fact * i
 
     return fact
 
